@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Esto puede ayudar a evitar barras de desplazamiento innecesarias */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Esto garantiza que el container ocupe toda la altura de la vista */
+    background: #FFFFFF; /* Puedes cambiar esto según tu diseño */
+}
+
+.left-section {
+    width: 200px; /* Ajusta esto según el ancho que desees para el sidebar */
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Esto asegura que el sidebar se extienda completamente verticalmente */
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF; /* Color de fondo para el contenido principal */
+}
+
+/* Asegúrate de que los estilos del sidebar y los botones son correctos */
+
+
+.left-section .sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.left-section .sidebar .item,
+.left-section .sign-out{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #364670;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.left-section .sidebar .item.active h3,
+.left-section .sidebar .item.active i,
+.left-section .sidebar .item:hover,
+.left-section .sign-out:hover{
+    color: #1976d2;
+}
+
+.left-section .sidebar .item h3,
+.left-section .sign-out h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.left-section .sidebar .item i,
+.left-section .sign-out i{
+    font-size: 22px;
+}
+
+
+h1 {
+    color: #ffcc00; /* Un tono dorado para el texto */
+    font-size: 2em;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente blanco para resaltar el texto */
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: rgba(0.1,0.1,0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.botones {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #ffcc00; /* Color amarillo */
+    border: none;
+    border-radius: 5px;
+    color: rgba(0.1,0.1,0.1);
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #e6b800; /* Un tono de amarillo más oscuro para el efecto hover */
+}

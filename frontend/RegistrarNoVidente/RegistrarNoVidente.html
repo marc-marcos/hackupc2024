@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-    <title>Vuelo Comprado</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Registrar No Vidente</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -38,13 +38,18 @@
         </div>
 
         <div class="main-content">
-            <h1>¡Vuelo Comprado!</h1>
-            <h2>Un momento... <br> ¿Te gustaría ayudar a una persona con discapacidad visual?</h2>
-            <div class="botones">
-                <button type="button" onclick="location.href='../home/Pag_inicio.html';">Sí, encantado!</button>
-                <button type="button" onclick="location.href='../home/Pag_inicio.html';">No, gracias</button>
-            </div>
+            <h1>Ponga sus datos:</h1>
+            <form>
+                <label for="tarjeta-sanitaria">Tarjeta Sanitaria:</label>
+                <input type="text" id="tarjeta-sanitaria" name="tarjeta-sanitaria">
+
+                <label for="numero-once">Numero Once:</label>
+                <input type="text" id="numero-once" name="numero-once">
+            </form>
+            <button type="submit">Submit</button>
         </div>
     </div>
+
+
 </body>
 </html>

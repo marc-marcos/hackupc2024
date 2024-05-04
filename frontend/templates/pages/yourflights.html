@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="center">Tus Vuelos Pendientes</h1>
+<div class="flight-list">
+    {% for flight in flights %}
+    {% include 'components/flight-list-row.html' %}
+    {% endfor %}
+</div>
+{% endblock %}

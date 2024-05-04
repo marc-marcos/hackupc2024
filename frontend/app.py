@@ -17,6 +17,10 @@ def your_flights():
 def registrar_no_vidente():
     return app.send_static_file("RegistrarNoVidente/RegistrarNoVidente.html")
 
+@app.route("/check_in")
+def check_in():
+    return app.send_static_file("CheckIn/checkin.html")
+
 @app.route("/")
 def index():
     return app.send_static_file("home/Pag_inicio.html")

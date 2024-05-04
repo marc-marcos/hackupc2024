@@ -30,6 +30,8 @@ html, body {
     align-items: center; /* Asegúrate de que los elementos estén centrados horizontalmente también */
     height: 100%; /* Esto asegura que el sidebar se extienda completamente verticalmente */
     padding: 20px 0; /* Añade un padding vertical para un mejor espaciado interior */
+    background-color: #ffcc00;
+
 }
 
 

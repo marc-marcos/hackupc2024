@@ -1,24 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
     fetch('http://barrierfreeboarding.co:5001/lista_vuelos')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             const vuelos = data.vuelos;
             const listaVuelos = document.querySelector('.flight-list');
             vuelos.forEach(vuelo => {
-                const divVuelo = document.createElement('div');
-                divVuelo.className = 'flight';
-                divVuelo.innerHTML = `
-                    <td>${vuelo[0]}</td>
-                    <td>${vuelo[1]}</td>
-                    <td>${vuelo[2]}</td>
-                    <td>${vuelo[3]}</td>
-                    <td>${vuelo[4]}</td>
+                const trVuelo = document.createElement('tr');
+                trVuelo.innerHTML = `
+                    <td>${vuelo.codigo}</td>
+                    <td>${vuelo.origen}</td>
+                    <td>${vuelo.destino}</td>
+                    <td>${vuelo.fecha}</td>
+                    <td>${vuelo.terminal}</td>
                 `;
-                listaVuelos.appendChild(divVuelo);
+                listaVuelos.appendChild(trVuelo);
             });
         })
         .catch(error => console.error('Error loading the flight data:', error));
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const flights = document.querySelectorAll('tr:not(:first-child)');  // Excluye el encabezado de la tabla

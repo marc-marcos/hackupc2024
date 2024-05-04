@@ -1,84 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="static/assets/css/styles.css">
-    
-        <!-- ===== BOX ICONS ===== -->
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Responsive Login Form Sign In Sign Up</title>
-    </head>
-    <body>
-        <div class="login">
-            <div class="login__content">
-                <div class="login__img">
-                    <img src="static/assets/img/vueling-logo.png" alt="">
-                </div>
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="static/assets/css/styles.css">
 
-                <div class="login__forms">
-                    <form action="" class="login__registre" id="login-in">
-                        <h1 class="login__title">Sign In</h1>
-    
-                        <div class="login__box">
-                            <i class='bx bx-user login__icon'></i>
-                            <input type="text" placeholder="Username" class="login__input">
-                        </div>
-    
-                        <div class="login__box">
-                            <i class='bx bx-lock-alt login__icon'></i>
-                            <input type="password" placeholder="Password" class="login__input">
-                        </div>
+    <!-- ===== BOX ICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-                        <a href="#" class="login__forgot">Forgot password?</a>
+    <title>Responsive Login Form Sign In Sign Up</title>
+</head>
 
-                        <a href="#" class="login__button">Sign In</a>
+<body>
+    <div class="login">
+        <div class="login__content">
+            <div class="login__img">
+                <img src="static/assets/img/vueling-logo.png" alt="">
+            </div>
 
-                        <div>
-                            <span class="login__account">Don't have an Account ?</span>
-                            <span class="login__signin" id="sign-up">Sign Up</span>
-                        </div>
-                    </form>
+            <div class="login__forms">
+                <form action="" class="login__registre" id="login-in">
+                    <h1 class="login__title">Sign In</h1>
 
-                    <form action="" class="login__create none" id="login-up">
-                        <h1 class="login__title">Create Account</h1>
-    
-                        <div class="login__box">
-                            <i class='bx bx-user login__icon'></i>
-                            <input type="text" placeholder="Username" class="login__input">
-                        </div>
-    
-                        <div class="login__box">
-                            <i class='bx bx-at login__icon'></i>
-                            <input type="text" placeholder="Email" class="login__input">
-                        </div>
+                    <div class="login__box">
+                        <i class='bx bx-user login__icon'></i>
+                        <input type="text" placeholder="Username" class="login__input">
+                    </div>
 
-                        <div class="login__box">
-                            <i class='bx bx-lock-alt login__icon'></i>
-                            <input type="password" placeholder="Password" class="login__input">
-                        </div>
+                    <div class="login__box">
+                        <i class='bx bx-lock-alt login__icon'></i>
+                        <input type="password" placeholder="Password" class="login__input">
+                    </div>
 
-                        <a href="#" class="login__button">Sign Up</a>
+                    <a href="#" class="login__forgot">Forgot password?</a>
 
-                        <div>
-                            <span class="login__account">Already have an Account ?</span>
-                            <span class="login__signup" id="sign-in">Sign In</span>
-                        </div>
+                    <a href="#" class="login__button">Sign In</a>
 
-                        <div class="login__social">
-                            <a href="#" class="login__social-icon"><i class='bx bxl-facebook' ></i></a>
-                            <a href="#" class="login__social-icon"><i class='bx bxl-twitter' ></i></a>
-                            <a href="#" class="login__social-icon"><i class='bx bxl-google' ></i></a>
-                        </div>
-                    </form>
-                </div>
+                    <div>
+                        <span class="login__account">Don't have an Account ?</span>
+                        <span class="login__signin" id="sign-up">Sign Up</span>
+                    </div>
+                </form>
+
+                <form action="" class="login__create none" id="login-up">
+                    <h1 class="login__title">Create Account</h1>
+
+                    <div class="login__box">
+                        <i class='bx bx-user login__icon'></i>
+                        <input type="text" placeholder="Username" class="login__input">
+                    </div>
+
+                    <div class="login__box">
+                        <i class='bx bx-at login__icon'></i>
+                        <input type="text" placeholder="Email" class="login__input">
+                    </div>
+
+                    <div class="login__box">
+                        <i class='bx bx-lock-alt login__icon'></i>
+                        <input type="password" placeholder="Password" class="login__input">
+                    </div>
+
+                    <a href="#" class="login__button">Sign Up</a>
+
+                    <div>
+                        <span class="login__account">Already have an Account ?</span>
+                        <span class="login__signup" id="sign-in">Sign In</span>
+                    </div>
+
+                    <div class="login__social">
+                        <a href="#" class="login__social-icon"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="login__social-icon"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" class="login__social-icon"><i class='bx bxl-google'></i></a>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
-        <!--===== MAIN JS =====-->
-        <script src="static/assets/js/main.js"></script>
-    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Function to set a cookie
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                }
+                document.cookie = name + "=" + (value || "") + "; path=/";
+            }
+
+            // Function to handle form submission
+            function handleFormSubmission(formId) {
+                var form = document.getElementById(formId);
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    // Get the username input value
+                    var usernameInput = form.querySelector(".login__input[type='text']");
+                    var username = usernameInput.value;
+
+                    // Set the username as a cookie
+                    setCookie("username", username, 30); // Cookie expires in 30 days
+
+                    // You can redirect or perform any other action here
+                    console.log("Username cookie set:", document.cookie);
+                });
+            }
+
+            // Initialize form submission handling for the sign in form
+            handleFormSubmission("login-in");
+
+            // Add event listener to the Sign In button
+            var signInButton = document.querySelector("#login-in .login__button");
+            signInButton.addEventListener("click", function (event) {
+                // Call the form submission handler function
+                handleFormSubmission("login-in");
+            });
+        });
+
+    </script>
+
+    <!--===== MAIN JS =====-->
+    <script src="static/assets/js/main.js"></script>
+</body>
+
 </html>

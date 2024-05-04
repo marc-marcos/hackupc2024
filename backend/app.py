@@ -1,9 +1,19 @@
 from flask import Flask, jsonify, request, current_app, g
 import sqlite3
 import click
+import auth_utils
 
 app = Flask(__name__)
 
+@app.route("/logout")
+def logout():
+    data = request.json
+
+    email = data["email"]
+
+    auth_utils.destroy_token(email)
+
+    return jsonify({"message": "Logged out"})
 
 @app.route("/login", methods=["POST"])
 def login():
@@ -25,6 +35,7 @@ def login():
     
     else:
         vidente = user[4]
+        auth_utils.create_token(email)
         return jsonify({"message": "Login successful", "vidente": vidente})
 
     
@@ -158,7 +169,7 @@ def ayudar():
             return jsonify({"message": "User is not vidente"}), 403
 
         # vuelos should be a list of flights where the user with email has a reservation and another user has requested help
-        cursor.execute("SELECT * FROM reservas WHERE codigo IN (SELECT codigo FROM ayuda) AND email = ?", (email,))
+        cursor.execute("SELECT * FROM ayuda WHERE codigo IN (SELECT codigo FROM reservas WHERE email = ?)", (email,))
 
         vuelos = cursor.fetchall()
         return jsonify({"message": "User is vidente y todos los vuelos en los que puede ayudar.", "vuelos" : vuelos})

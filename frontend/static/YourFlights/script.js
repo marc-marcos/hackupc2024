@@ -1,24 +1,21 @@
-
-document.addEventListener("DOMContentLoaded", function() {
-    const flights = document.querySelectorAll('.flight');
-
-    flights.forEach(flight => {
-        const flightDateStr = flight.querySelector('.flight-date').textContent; // "24/10/2023 10:00"
-        const flightDate = new Date(flightDateStr.split(' ')[0].split('/').reverse().join('-') + 'T' + flightDateStr.split(' ')[1]);
-
-        const now = new Date();
-        const timeDiff = flightDate - now; // Diferencia en milisegundos
-        const hoursDiff = timeDiff / (1000 * 60 * 60); // Convertir a horas
-
-        const checkinButton = flight.querySelector('.button-checkin');
-        if (hoursDiff <= 48) {
-            checkinButton.disabled = false; // Habilita el botón si quedan menos de 48 horas
-            checkinButton.onclick = function() {
-                window.location.href = 'https://pagina.com'; // Redirige a la página de check-in
-            };
-        } else {
-            checkinButton.disabled = true; // Deja el botón desactivado
-        }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('http://barrierfreeboarding.co:5001/lista_vuelos')
+        .then(response => response.json())
+        .then(data => {
+            const vuelos = data.vuelos;
+            const listaVuelos = document.querySelector('.flight-list');
+            vuelos.forEach(vuelo => {
+                const divVuelo = document.createElement('div');
+                divVuelo.className = 'flight';
+                divVuelo.innerHTML = `
+                    <span class="flight-number">${vuelo[0]}</span>
+                    <span class="flight-origin">${vuelo[1]}</span>
+                    <span class="flight-destination">${vuelo[2]}</span>
+                    <span class="flight-date">${vuelo[3]}</span>
+                    <span class="flight-time">${vuelo[4]}</span>
+                `;
+                listaVuelos.appendChild(divVuelo);
+            });
+        })
+        .catch(error => console.error('Error loading the flight data:', error));
 });
-

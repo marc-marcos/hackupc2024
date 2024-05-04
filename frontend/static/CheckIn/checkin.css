@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Ubuntu, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Cambia a columna para alinear los elementos verticalmente */
+    width: 100%;
+    height: 100vh; /* Esto garantiza que el container ocupe toda la altura de la vista */
+  
+    align-items: center; /* Añadido para centrar verticalmente el contenido de .container */
+    justify-content: center; /* Añadido para centrar horizontalmente el contenido de .container */
+    background: #FFFFFF;
+}
+
+table {
+    max-width: 600px;
+    margin-top: 20px;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    padding: 10px 20px;
+    margin:20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #ffcc00; /* Color amarillo */
+    border: none;
+    border-radius: 5px;
+    color: rgba(0.1,0.1,0.1);
+    font-weight: bold;
+}
+
+.row_num {
+    margin-right: 30px;
+}
+
+label[for="seat"] {
+    margin-left: 10px;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #ffdd33; /* Un tono de amarillo más oscuro para el efecto hover */
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}

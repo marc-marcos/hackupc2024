@@ -2,8 +2,10 @@ from flask import Flask, jsonify, request, current_app, g
 import sqlite3
 import click
 import auth_utils
+from flask_cors import CORS
 
 app = Flask(__name__)
+cors = CORS(app, origins="*")
 
 @app.route("/logout")
 def logout():

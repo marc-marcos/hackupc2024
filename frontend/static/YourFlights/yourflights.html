@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <link rel="stylesheet" href="static/YourFlights/style.css">
-    <title>Your Flights</title>
+    <title>Tus Vuelos Pendientes</title>
 </head>
 
 <body>
@@ -72,42 +72,7 @@
 
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const flights = document.querySelectorAll('.flight');
-        
-            flights.forEach(flight => {
-                const dateString = flight.querySelector('.flight-date').textContent; // "5/5/2024 10:00"
-                const [datePart, timePart] = dateString.split(' ');
-                const [day, month, year] = datePart.split('/');
-                const [hour, minute] = timePart.split(':');
-        
-                // Creación de la fecha del vuelo correctamente ajustando el mes
-                const flightDate = new Date(year, month - 1, day, hour, minute);
-                const now = new Date();
-                const timeDiff = flightDate - now; // Diferencia en milisegundos
-                const hoursDiff = timeDiff / (1000 * 60 * 60); // Convertir a horas
-        
-                const checkinButton = flight.querySelector('.button-checkin');
-                console.log("Horas hasta el vuelo: ", hoursDiff); // Para depuración
-        
-                // La condición debe ser 'menor o igual' para activar cuando esté a menos de 48 horas
-                if (hoursDiff > 48) {
-                    checkinButton.disabled = true;
-                    checkinButton.style.backgroundColor = "#4CAF50"; // Verde cuando está habilitado
-                    checkinButton.onclick = function() {
-                        window.location.href = 'https://pagina.com'; // Redirige a la página de check-in
-                    };
-                } else {
-                    checkinButton.disabled = false;
-                    checkinButton.style.backgroundColor = "#ccc"; // Gris cuando está desactivado
-                    checkinButton.onclick = null; // Eliminar cualquier manejador de eventos previo
-                }
-            });
-        });
-        
-        
-        </script>
+    <script src="static/YourFlights/script.js"></script>
         
 </body>
 

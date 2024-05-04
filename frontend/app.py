@@ -11,7 +11,6 @@ def hello_world():
 
 @app.route("/your_flights")
 def your_flights():
-    print("test")
     return app.send_static_file("YourFlights/yourflights.html")
 
 @app.route("/registrar_no_vidente")
@@ -25,6 +24,9 @@ def comprando_vuelo():
 @app.route("/vuelo_comprado")
 def vuelo_comprado():
     return app.send_static_file("VueloComprado/index.html")
+@app.route("/check_in")
+def check_in():
+    return app.send_static_file("CheckIn/checkin.html")
 
 @app.route("/")
 def index():

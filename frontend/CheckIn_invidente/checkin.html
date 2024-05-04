@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <title>Completa tu check-in</title>
+    <link rel="stylesheet" href="checkin.css">
+    <script src="checkin.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <label for="row">Fila:</label>
+            <span id="row_num"></span>
+            
+            <label for="seat">Asiento:</label>
+            <span id="seat_letter"></span>
+        </div>
+        <button id="download">Descargar billete</button>
+        <span id="tabtitle">Your guide's information</span>
+        <table id="widget" style="border-radius: 10px;">
+            <tr>
+                <td><label for="guide_name">Nombre guía:</label></td>
+                <td><label for="guide_name">Emanuel Salvador</label></td>
+            </tr>
+            <tr>
+                <td><label for="meet_place">Lugar encuentro:</label></td>
+                <td><label for="meet_place">T1 metro station</label></td>
+            </tr>
+            <tr></tr>
+                <td style="border-bottom: none;"><label for="meet_time">Hora encuentro:</label></td>
+                <td style="border-bottom: none;"><label for="meet_time">10:00</label></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        window.onload = function() {
+            // Genera un número aleatorio entre 1 y 30 para la fila
+            var row = Math.floor(Math.random() * 60) + 1;
+            document.getElementById('row_num').textContent = row;
+
+            // Genera una letra aleatoria entre A y J para el asiento
+            var seat = String.fromCharCode(Math.floor(Math.random() * 6) + 65);
+            document.getElementById('seat_letter').textContent = seat;
+        }
+    </script>
+</body>
+</html>

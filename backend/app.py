@@ -27,6 +27,16 @@ def login():
         vidente = user[4]
         return jsonify({"message": "Login successful", "vidente": vidente})
 
+@app.route("/checkin_clicked", methods=["POST"])
+def checkin_clicked():
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT vidente FROM users WHERE email = ?, email")
+    vidente = cursor.fetchone()
+    if vidente:
+        return jsonify({"message": "Voluntario"})
+    else:
+        return jsonify({"message": "Invidente"})
     
 @app.route("/register_vidente", methods=["POST"])
 def register_vidente():

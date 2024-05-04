@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;  /* Cambia a columna para alinear los elementos verticalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center;     /* Centra los elementos horizontalmente */
+    height: 100vh;           /* Usa 100vh para asegurar que toma toda la altura de la ventana */
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.items > div {
+    margin-bottom: 20px; /* Espacio entre cada sección */
+}
+
+.buscador {
+    display:flex;
+    flex-direction: column;
+    width:500px;
+}
+
+
+h1 {
+    color: #ffcc00; /* Un tono dorado para el texto */
+    font-size: 2em;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente blanco para resaltar el texto */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    margin:10px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #ffcc00; /* Color amarillo */
+    border: none;
+    border-radius: 5px;
+    color: rgba(0.1,0.1,0.1);
+    font-weight: bold;
+}
+.proffile {
+    display:inline-flexbox;
+    flex-direction: column;
+    color: #364670;
+}
+
+button:hover {
+    background-color: #ffdd33; /* Un tono más claro de amarillo */
+}
+
+.left-section .sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.left-section .sidebar .item,
+.left-section .sign-out{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #364670;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.left-section .sidebar .item.active h3,
+.left-section .sidebar .item.active i,
+.left-section .sidebar .item:hover,
+.left-section .sign-out:hover{
+    color: #1976d2;
+}
+
+.left-section .sidebar .item h3,
+.left-section .sign-out h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #364670;
+}
+
+.left-section .sidebar .item i,
+.left-section .sign-out i{
+    font-size: 22px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Esto garantiza que el container ocupe toda la altura de la vista */
+    align-items: center; /* Añadido para centrar verticalmente el contenido de .container */
+    justify-content: center; /* Añadido para centrar horizontalmente el contenido de .container */
+    background: #FFFFFF;
+}
+
+.left-section {
+    width: 200px; /* Ajusta esto según el ancho que desees para el sidebar */
+    background-color: #ffcc00;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Cambiado de 'space-between' a 'center' */
+    align-items: center; /* Asegúrate de que los elementos estén centrados horizontalmente también */
+    height: 100%; /* Esto asegura que el sidebar se extienda completamente verticalmente */
+    padding: 20px 0; /* Añade un padding vertical para un mejor espaciado interior */
+}
+
+
+.sidebar{
+    padding-top: 5px;
+    width: 100%; /* Asegura que el sidebar use todo el ancho disponible del .left-section */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente dentro del sidebar */
+    gap: 20px; /* Mantiene un espacio entre los elementos */
+}
+
+h2 {
+    color: #364670
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%; /* Utiliza todo el ancho disponible del contenedor padre */
+    padding: 12px 20px; /* Espacio interno para hacerlo más accesible */
+    margin: 8px 0; /* Margen para separar cada campo */
+    display: inline-block; /* Para que respeten los márgenes y paddings */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados para un look más suave */
+    box-sizing: border-box; /* El ancho y alto incluirán el padding y border */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave para hover */
+    outline: none; /* Elimina el borde de foco predeterminado */
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #ffcc00; /* Color del borde en foco */
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6); /* Sombra exterior para destacar el campo activo */
+}
+
+input[type="text"], input[type="date"] {
+    border: 2px solid #ffcc00; /* Borde con el color primario de la página */
+    background-color: #ffffff; /* Fondo blanco para más claridad */
+    color: #333; /* Texto oscuro para mejor legibilidad */
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+    border-color: #ffdd33; /* Un tono más claro de amarillo para el foco */
+}

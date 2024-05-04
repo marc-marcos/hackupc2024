@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* Estilos existentes para sidebar, body, etc. */
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    margin-left: 50px; /* Si se desea mantener el margen como en la página anterior */
+}
+
+.main-content h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* Ajustar según necesidad */
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input[type="text"] {
+    margin-top: 5px;
+    padding: 10px;
+    width: 300px; /* Ajustar según necesidad */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffcc00; /* Color amarillo */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input {
+    display: inline-block;
+    margin:15px;
+}
+
+form button:hover {
+    background-color: #e6b800; /* Un tono de amarillo más oscuro para el efecto hover */
+}
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Esto puede ayudar a evitar barras de desplazamiento innecesarias */
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* Esto garantiza que el container ocupe toda la altura de la vista */
+    align-items: center; /* Añadido para centrar verticalmente el contenido de .container */
+    justify-content: center; /* Añadido para centrar horizontalmente el contenido de .container */
+    background: #FFFFFF;
+}
+
+.left-section {
+    width: 200px; /* Ajusta esto según el ancho que desees para el sidebar */
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Cambiado de 'space-between' a 'center' */
+    align-items: center; /* Asegúrate de que los elementos estén centrados horizontalmente también */
+    height: 100%; /* Esto asegura que el sidebar se extienda completamente verticalmente */
+    padding: 20px 0; /* Añade un padding vertical para un mejor espaciado interior */
+}
+
+
+.sidebar{
+    padding-top: 5px;
+    width: 100%; /* Asegura que el sidebar use todo el ancho disponible del .left-section */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente dentro del sidebar */
+    gap: 20px; /* Mantiene un espacio entre los elementos */
+}
+
+h1 {
+    color: #ffcc00; /* Un tono dorado para el texto */
+    font-size: 2em;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo ligeramente blanco para resaltar el texto */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.main-content h2 {
+    color: rgba(0.1,0.1,0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    display:inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.botones {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin:10px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #ffcc00; /* Color amarillo */
+    border: none;
+    border-radius: 5px;
+    color: rgba(0.1,0.1,0.1);
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ffdd33; /* Un tono de amarillo más oscuro para el efecto hover */
+}
+.left-section .sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.left-section .sidebar .item,
+.left-section .sign-out{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #364670;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.left-section .sidebar .item.active h3,
+.left-section .sidebar .item.active i,
+.left-section .sidebar .item:hover,
+.left-section .sign-out:hover{
+    color: #1976d2;
+}
+
+.left-section .sidebar .item h3,
+.left-section .sign-out h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.left-section .sidebar .item i,
+.left-section .sign-out i{
+    font-size: 22px;
+}

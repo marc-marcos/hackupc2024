@@ -43,6 +43,8 @@
 
 ### /ayudar
 
+Esta llamada devuelve dado un email, todos las personas que puede ayudar (personas invidentes con las que comparte un vuelo).
+
 #### Campos que acepta
 
 - `email`
@@ -53,4 +55,11 @@
 
 - `email_vidente`
 - `email_no_vidente`
+- `codigo`
+
+### Pedir ayuda
+
+#### Campos que acepta 
+
+- `email`
 - `codigo`

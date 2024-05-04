@@ -34,82 +34,67 @@ h1 {
     width: 100%; /* Asegura que el título se extienda a través de todo el ancho */
 }
 
-/* Estilo de la lista de vuelos */
-.flight-list {
-    width: 100%; /* Esto asegura que la lista ocupe todo el ancho disponible */
-    max-width: 1200px; /* Esto puede ajustarse según tus necesidades de diseño */
-    margin: auto;
+table {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    border-collapse: collapse; /* Elimina los espacios entre las celdas */
+    margin-top: 20px; /* Espacio por encima de la tabla */
+    background-color: #c19a00; /* Fondo general de la tabla */
 }
 
-.titulos-tabla, .flight {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffcc00; /* Fondo amarillo vibrante */
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-.titulos-tabla span, .flight span {
-    flex: 1;
+th, td {
     text-align: center;
-    font-weight: bold; /* Texto en negrita para mejor visibilidad */
+    padding: 10px;
+    background-color: #ffcc00; /* Color de fondo para las celdas */
 }
-
-
-/* Estilos para el botón de check-in */
-.last button {
-    padding: 10px 20px;
-    background-color: #c19a00e8;
-    color: #000000;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-
-.flight .last {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 150px;
-}
-.last {
-    flex: 1.5; /* Ajustando el espacio según sea necesario */
-    text-align: center;
-    max-width: 150px; /* O cualquier medida específica que necesites */
-}
-
-/* Estilos para el botón habilitado */
-.last button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    background-color: #ffcc00e4; /* Verde cuando está habilitado */
+th {
+    background-color: #c19a00; /* Color de fondo para los encabezados */
     color: white;
-    transition: background-color 0.3s;
+    font-weight: bold;
 }
 
-.last button:hover {
-    background-color: #7e6500e4; /* Un tono más oscuro de verde al pasar el ratón */
+tr {
+    border-radius: 10px; 
+    margin-bottom: 5px;
+    box-shadow: 0 4px 0 0 #f4f4f4; /* Sombra que simula el espacio entre filas */
 }
 
-/* Estilos para el botón desactivado */
-
-.flight span {
-    text-align: center;
-    font-weight: 600;
-    padding: 0 10px; /* Agrega padding para no pegar el texto a los bordes */
-}
-.flight-number {
-    flex: 2; /* Más espacio para el número de vuelo */
+tr:last-child {
+    margin-bottom: 0;
+    box-shadow: none;
 }
 
-.flight-origin, .flight-destination, .flight-date, .flight-terminal {
-    flex: 1;
+tr:not(:last-child) {
+    margin-bottom: 10px; /* Añade espacio debajo de cada fila, excepto la última */
+    box-shadow: 0 10px 0 0 white; /* Crea un 'espacio' visual usando sombra */
+}
+
+/* Aplicar bordes redondeados a las celdas en las esquinas */
+tr th:first-child, tr td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+tr th:last-child, tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+button.button-checkin {
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Verde para activo */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.button-checkin:hover {
+    background-color: #c19a00;
+}
+
+button.button-checkin:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .main-content {
@@ -167,12 +152,12 @@ h1 {
     font-size: 22px;
 }
 
-.button-checkin:disabled {
+.button-checkin:disabled, .button-draw:disabled{
     background-color: #ccc; /* Gris para deshabilitado */
     cursor: not-allowed;
 }
 
-.button-checkin:enabled {
+.button-checkin:enabled, .button-draw:enabled{
     background-color: #cca404e4; /* Verde para habilitado */
     cursor: pointer;
 }

@@ -94,7 +94,7 @@ def anadir_vuelo():
     destino = data["destino"]
     fecha = data["fecha"]
     hora = data["hora"]
-
+    #terminal = data["terminal"]aa
     conn = sqlite3.connect("database.db")
 
     cursor = conn.cursor()

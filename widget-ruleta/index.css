@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #F3F3F3; /* Gris claro de la paleta para el fondo */
+    width: 100%;
+    height: 100vh;
+}
+.contenedor {
+    padding: 10px;
+    width: 980px;
+    max-width: calc(100% - 20px);
+    margin: auto;
+    margin-top: 50px;
+    color: #333333; /* Gris oscuro de la paleta para el texto */
+    font-family: sans-serif;
+}
+.concursantes {
+    margin-top: 20px;
+    text-align: center;
+    margin: auto;
+    position: relative;
+}
+h1 {
+    position: relative;  /* Esencial para que z-index tenga efecto */
+    z-index: 10;         /* Asegurarse de que tiene un valor más alto que el canvas */
+    text-align: center;
+    color: #333333;
+}
+canvas {
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+    background: #F3F3F3; /* Blanco para el fondo del canvas */
+    border: 1px solid #F3F3F3; /* Borde ligero */
+}
+button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #FFCC00; /* Amarillo brillante de la paleta para el botón */
+    color: #333; /* Gris oscuro para el texto del botón */
+    border-style: none;
+    z-index: 10;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para el botón */
+}
+.mark-winner {
+    position: absolute;
+    clip-path: polygon(0 10px, 60px 0, 60px 20px);
+    background: #4D4D4D; /* Gris medio para el marcador ganador */
+    width: 60px;
+    height: 20px;
+    top: 50%;
+    right: 18%;
+    z-index: 10;
+    box-shadow: 0 0 3px #333;
+}

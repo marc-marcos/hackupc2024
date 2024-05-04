@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sorteo</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="contenedor">
+		<h1>Concursantes</h1>
+		<div class="concursantes">
+			<canvas id="idcanvas" width="600" height="600"></canvas>
+			<br>
+			<button onclick="sortear()"><span id="idestado">Sortear</span></button>
+			<div class="mark-winner"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		const array_concursantes = [
+			//'kamila Villablanca'-GANADORA
+			'20% descuento vuelo',
+			'10% descuento vuelo',
+			'5% descuento vuelo',
+			'vuelo gratis',
+			'café gratis',
+			'consumición bar',
+			'200 vueling points',
+			'100 vueling points'
+		];
+	
+		let canvas = document.getElementById("idcanvas");
+		let context = canvas.getContext("2d");
+		let center = canvas.width / 2;
+		let velocidad = 5; // Velocidad inicial de rotación
+		let aceleracion = 0.1; // Aceleración inicial
+	
+		context.beginPath();
+		context.moveTo(center, center);
+		context.arc(center, center, center, 0, 2 * Math.PI);
+		context.lineTo(center, center);
+		context.fillStyle = '#33333333';
+		context.fill();
+	
+		context.beginPath();
+		context.moveTo(center, center);
+		context.arc(center, center, center - 10, 0, 2 * Math.PI);
+		context.lineTo(center, center);
+		context.fillStyle = 'black';
+		context.fill();
+	
+		// Función para reorganizar aleatoriamente el array de concursantes
+		function shuffle(array) {
+			for (let i = array.length - 1; i > 0; i--) {
+				const j = Math.floor(Math.random() * (i + 1));
+				[array[i], array[j]] = [array[j], array[i]];
+			}
+			return array;
+		}
+	
+		// Reorganizar el array de concursantes de forma aleatoria
+		shuffle(array_concursantes);
+	
+		// Definir una lista de colores de Vueling
+		const vuelingColors = ['#FFFF', '#FFCC00', '#FFFF', '#FFCC00', '#FFFF', '#FFCC00', '#FFFF', '#FFCC00'];
+	
+		for (let i = 0; i < array_concursantes.length; i++) {
+			context.beginPath();
+			context.moveTo(center, center);
+			context.arc(center, center, center - 20, i * 2 * Math.PI / array_concursantes.length, (i + 1) * 2 * Math.PI / array_concursantes.length);
+			context.lineTo(center, center);
+			// Aplicar colores en orden cíclico desde la lista de colores
+			context.fillStyle = vuelingColors[i % vuelingColors.length];
+			context.fill();
+	
+			context.save();
+			context.translate(center, center);
+			context.rotate(3 * 2 * Math.PI / (5 * array_concursantes.length) + i * 2 * Math.PI / array_concursantes.length);
+			context.translate(-center, -center);
+			context.font = "20px Comic Sans MS"; // Aumentar el tamaño de la fuente
+			context.textAlign = "right";
+			context.fillStyle = "black";
+			context.fillText(array_concursantes[i], canvas.width - 30, center);
+			context.restore();
+		}
+	
+		let pos_ini = 0;
+		let movement;
+	
+
+function sortear() {
+    let canvas = document.getElementById("idcanvas");
+    // Establecer la velocidad inicial y la aceleración
+    velocidad = 15;
+    aceleracion = 0.05; // Ajustar para un frenado más suave o más rápido
+    // Animación de rotación
+    movement = setInterval(function () {
+        pos_ini += velocidad;
+        canvas.style.transform = 'rotate(' + pos_ini + 'deg)';
+        // Reducir la velocidad gradualmente
+        velocidad -= aceleracion;
+        if (velocidad <= 0) {
+            clearInterval(movement);
+            let ganador = determinarGanador(pos_ini);
+            alert("¡Felicidades! Ha tocado: " + array_concursantes[ganador]); // Mostrar el popup
+        }
+    }, 10);
+}
+
+function determinarGanador(posicionFinal) {
+    // Normalizar la posición final a un ángulo entre 0 y 360
+    let angulo = posicionFinal % 360;
+    // Ajustar el cálculo para que el segmento ganador sea el que queda en la parte superior del canvas
+    let index = Math.floor((360 - angulo) / (360 / array_concursantes.length));
+    return index;
+}
+
+
+	</script>
+	
+</body>
+</html>

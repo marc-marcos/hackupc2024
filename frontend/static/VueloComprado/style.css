@@ -63,6 +63,11 @@ h1 {
     padding: 10px 20px;
     border-radius: 10px;
 }
+.parrafo {
+    max-width: 1000px;
+    margin:20px;
+    border-color:black;
+}
 
 .main-content h2 {
     color: rgba(0.1,0.1,0.1);

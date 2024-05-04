@@ -14,7 +14,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(-45deg, #ffcc00, #ff6f00, #ffcc00, #ff6f00);
+    background: linear-gradient(-45deg, #ffcc00, #ffdd33, #ffcc00, #ffdd33);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
     font-family: 'Ubuntu', sans-serif;

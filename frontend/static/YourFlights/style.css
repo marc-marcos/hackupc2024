@@ -35,7 +35,11 @@ h1 {
 }
 
 /* Estilo de la lista de vuelos */
-
+.flight-list {
+    width: 100%; /* Esto asegura que la lista ocupe todo el ancho disponible */
+    max-width: 1200px; /* Esto puede ajustarse según tus necesidades de diseño */
+    margin: auto;
+}
 
 .titulos-tabla, .flight {
     display: flex;

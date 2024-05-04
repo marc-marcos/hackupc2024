@@ -5,7 +5,7 @@ const maxDots = 3;
 
 function updateLoadingText() {
     let dots = '.'.repeat(dotCount);
-    loadingText.textContent = `COMPRANDO VUELO${dots}`;
+    loadingText.textContent = `Purchasing flight${dots}`;
     dotCount = (dotCount + 1) % (maxDots + 1); // Volver a 0 después de 3 puntos
 }
 
@@ -16,5 +16,5 @@ const intervalId = setInterval(updateLoadingText, 500);
 setTimeout(() => {
     clearInterval(intervalId); // Detener la animación
     window.location.href = '/vuelo_comprado'; // Cambiar a la nueva página
-}, 10);
+}, 5000);
 

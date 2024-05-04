@@ -87,7 +87,7 @@ button {
 }
 
 button:hover {
-    background-color: #e6b800; /* Un tono de amarillo más oscuro para el efecto hover */
+    background-color: #ffdd33                                                                             ; /* Un tono de amarillo más oscuro para el efecto hover */
 }
 .left-section .sidebar{
     display: flex;

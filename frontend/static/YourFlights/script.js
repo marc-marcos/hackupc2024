@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     fetch('http://barrierfreeboarding.co:5001/lista_vuelos')
         .then(response => response.json())
         .then(data => {
@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const divVuelo = document.createElement('div');
                 divVuelo.className = 'flight';
                 divVuelo.innerHTML = `
-                    <td">${vuelo[0]}</td>
-                    <td">${vuelo[1]}</td>
-                    <td">${vuelo[2]}</td>
-                    <td">${vuelo[3]}</td>
-                    <td">${vuelo[4]}</td>
+                    <td>${vuelo[0]}</td>
+                    <td>${vuelo[1]}</td>
+                    <td>${vuelo[2]}</td>
+                    <td>${vuelo[3]}</td>
+                    <td>${vuelo[4]}</td>
                 `;
                 listaVuelos.appendChild(divVuelo);
             });
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .catch(error => console.error('Error loading the flight data:', error));
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const flights = document.querySelectorAll('tr:not(:first-child)');  // Excluye el encabezado de la tabla
 
     flights.forEach(flight => {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const [date, time] = dateString.split(' ');
         const [day, month, year] = date.split('/');
         const [hours, minutes] = time.split(':');
-        
+
         const flightDate = new Date(year, month - 1, day, hours, minutes);
         const now = new Date();
         const timeDiff = flightDate.getTime() - now.getTime();

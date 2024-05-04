@@ -1,28 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <link rel="stylesheet" href="static/YourFlights/style.css">
     <title>Your Flights</title>
 </head>
+
 <body>
     <div class="container">
+        <div class="left-section">
+            <div class="proffile">
+                <h2>Tryhards</h2> <br> <h3>HackUPC2024</h3>
+            </div>
+            <a href="/">
+                <div class="sidebar">
+                    <div class="item active">
+                        <i class="ri-home-4-line"></i>
+                        <h3>Home</h3>
+                    </div>
+            </a>
+                <a href="/your_flights">
+                    <div class="item">
+                        <i class="ri-flight-takeoff-line"></i>
+                        <h3>Your Flights</h3>
+                    </div>
+                </a>
+                <div class="item">
+                    <i class="ri-question-line"></i>
+                    <h3>Help</h3>
+                </div>
+                <div class="item">
+                    <i class="ri-settings-3-line"></i>
+                    <h3>Settings</h3>
+                </div>
+            </div>
+            <div class="sign-out">
+                <i class="ri-logout-box-r-line"></i>
+                <h3>Sign Out</h3>
+            </div>
+        </div>
 
         <div class="main-content">
             <h1>Tus Vuelos Pendientes</h1>
             <div class="flight-list">
-                <div class="flight">
-                    <span class="flight-number">VY12345</span>
-                    <span class="flight-origin">Madrid</span>
-                    <span class="flight-destination">Barcelona</span>
-                    <span class="flight-date">24/10/2023 10:00</span>
-                    <span class="flight-terminal">T1</span>
+                <div class="titulos-tabla">
+                    <span class="first">Número de Vuelo</span>
+                    <span>Aeropuerto Origen</span>
+                    <span>Aeropuerto1 Destino</span>
+                    <span>Fecha y Hora</span>
+                    <span>Número de Terminal</span>
+                    <span class="last">Hacer Check-In</span>
                 </div>
+                
+                <div class="flight">
+                    <span class="first">VY12345</span>
+                    <span>Madrid</span>
+                    <span>Barcelona</span>
+                    <span>10/5/2024 10:00</span>
+                    
+                    <span>T1</span>
+                    <div class="last">
+                        <button class="button-checkin">Check in</button>
+                    </div>
+                </div>
+                
                 <!-- Repetir el div .flight para cada vuelo -->
             </div>
-            
+
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const flights = document.querySelectorAll('.flight');
+        
+            flights.forEach(flight => {
+                const dateString = flight.querySelector('.flight-date').textContent; // "5/5/2024 10:00"
+                const [datePart, timePart] = dateString.split(' ');
+                const [day, month, year] = datePart.split('/');
+                const [hour, minute] = timePart.split(':');
+        
+                // Creación de la fecha del vuelo correctamente ajustando el mes
+                const flightDate = new Date(year, month - 1, day, hour, minute);
+                const now = new Date();
+                const timeDiff = flightDate - now; // Diferencia en milisegundos
+                const hoursDiff = timeDiff / (1000 * 60 * 60); // Convertir a horas
+        
+                const checkinButton = flight.querySelector('.button-checkin');
+                console.log("Horas hasta el vuelo: ", hoursDiff); // Para depuración
+        
+                // La condición debe ser 'menor o igual' para activar cuando esté a menos de 48 horas
+                if (hoursDiff > 48) {
+                    checkinButton.disabled = true;
+                    checkinButton.style.backgroundColor = "#4CAF50"; // Verde cuando está habilitado
+                    checkinButton.onclick = function() {
+                        window.location.href = 'https://pagina.com'; // Redirige a la página de check-in
+                    };
+                } else {
+                    checkinButton.disabled = false;
+                    checkinButton.style.backgroundColor = "#ccc"; // Gris cuando está desactivado
+                    checkinButton.onclick = null; // Eliminar cualquier manejador de eventos previo
+                }
+            });
+        });
+        
+        
+        </script>
+        
 </body>
+
 </html>

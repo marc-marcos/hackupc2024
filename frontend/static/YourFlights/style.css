@@ -1,55 +1,174 @@
-/* Estilos básicos */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     margin: 0;
-    font-family: 'Ubuntu', sans-serif;
-    padding: 20px;
+    padding: 0;
     width: 100%;
-    overflow: hidden; /* Esto puede ayudar a evitar barras de desplazamiento innecesarias */
-    height: 100%;
+    height: 100vh; /* Full height */
+    display: flex; /* Hace que el sidebar y el content sean flex items */
+    overflow: hidden;
 }
+
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-h1 {
-    text-align: center;
-    color: #ffcc00;
-}
-
-/* Estilo de la lista de vuelos */
-.flight-list {
-    margin-top: 20px;
-}
-
-.flight {
-    background-color: #ffcc00;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
     display: flex;
-    justify-content: space-between;
+    width: 100%; /* Asegura que el container use todo el ancho disponible */
+}
+
+.left-section {
+    width: 200px;
+    background-color: #ffcc00;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.flight span {
-    flex: 1;
+h1 {
+    color: #ffcc00;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
     text-align: center;
-    font-weight: 600;
+    width: 100%; /* Asegura que el título se extienda a través de todo el ancho */
 }
 
+/* Estilo de la lista de vuelos */
+
+
+.titulos-tabla, .flight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffcc00; /* Fondo amarillo vibrante */
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.titulos-tabla span, .flight span {
+    flex: 1;
+    text-align: center;
+    font-weight: bold; /* Texto en negrita para mejor visibilidad */
+}
+
+
+/* Estilos para el botón de check-in */
+.last button {
+    padding: 10px 20px;
+    background-color: #c19a00e8;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.flight .last {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+}
+.last {
+    flex: 1.5; /* Ajustando el espacio según sea necesario */
+    text-align: center;
+    max-width: 150px; /* O cualquier medida específica que necesites */
+}
+
+/* Estilos para el botón habilitado */
+.last button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #ffcc00e4; /* Verde cuando está habilitado */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.last button:hover {
+    background-color: #7e6500e4; /* Un tono más oscuro de verde al pasar el ratón */
+}
+
+/* Estilos para el botón desactivado */
+
+.flight span {
+    text-align: center;
+    font-weight: 600;
+    padding: 0 10px; /* Agrega padding para no pegar el texto a los bordes */
+}
 .flight-number {
     flex: 2; /* Más espacio para el número de vuelo */
 }
 
 .flight-origin, .flight-destination, .flight-date, .flight-terminal {
     flex: 1;
+}
+
+.main-content {
+    flex-grow: 1; /* Toma el espacio restante */
+    padding: 20px;
+}
+
+.main-content h2 {
+    color: rgba(0.1,0.1,0.1);
+    background-color: rgba(255, 255, 255, 0.8);
+    display:inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.sidebar{
+    padding-top: 5px;
+    width: 100%; /* Asegura que el sidebar use todo el ancho disponible del .left-section */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos horizontalmente dentro del sidebar */
+    gap: 20px; /* Mantiene un espacio entre los elementos */
+}
+.left-section .sidebar{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.left-section .sidebar .item,
+.left-section .sign-out{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #364670;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.left-section .sidebar .item.active h3,
+.left-section .sidebar .item.active i,
+.left-section .sidebar .item:hover,
+.left-section .sign-out:hover{
+    color: #1976d2;
+}
+
+.left-section .sidebar .item h3,
+.left-section .sign-out h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.left-section .sidebar .item i,
+.left-section .sign-out i{
+    font-size: 22px;
+}
+
+.button-checkin:disabled {
+    background-color: #ccc; /* Gris para deshabilitado */
+    cursor: not-allowed;
+}
+
+.button-checkin:enabled {
+    background-color: #cca404e4; /* Verde para habilitado */
+    cursor: pointer;
 }

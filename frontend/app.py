@@ -18,6 +18,15 @@ def your_flights():
 def registrar_no_vidente():
     return app.send_static_file("RegistrarNoVidente/RegistrarNoVidente.html")
 
+@app.route("/comprando_vuelo")
+def comprando_vuelo():
+    return app.send_static_file("ComprandoVuelo/comprandovuelo.html")
+
+@app.route("/vuelo_comprado")
+def vuelo_comprado():
+    return app.send_static_file("VueloComprado/index.html")
+
 @app.route("/")
 def index():
     return app.send_static_file("home/Pag_inicio.html")
+

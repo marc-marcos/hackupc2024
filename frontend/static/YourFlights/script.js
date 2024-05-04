@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('http://127.0.0.1:5001/lista_vuelos')
+    fetch('http://barrierfreeboarding.co:5001/lista_vuelos')
         .then(response => response.json())
         .then(data => {
             const vuelos = data.vuelos;

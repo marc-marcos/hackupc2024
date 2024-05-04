@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="flight-destination">${vuelo[2]}</span>
                     <span class="flight-date">${vuelo[3]}</span>
                     <span class="flight-time">${vuelo[4]}</span>
+                    <span class="flight-status">T${Math.floor(Math.random() * 2) + 1}</span>
                 `;
                 listaVuelos.appendChild(divVuelo);
             });

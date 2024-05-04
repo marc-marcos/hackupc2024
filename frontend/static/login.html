@@ -82,45 +82,27 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Function to set a cookie
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                }
-                document.cookie = name + "=" + (value || "") + "; path=/";
-            }
+    // Get the sign-in and sign-up forms
+    const signInForm = document.getElementById("login-in");
+    const signUpForm = document.getElementById("login-up");
 
-            // Function to handle form submission
-            function handleFormSubmission(formId) {
-                var form = document.getElementById(formId);
-                form.addEventListener("submit", function (event) {
-                    event.preventDefault(); // Prevent default form submission
+    // Add event listener for sign-in form submission
+    signInForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        // You can add your custom logic here for sign-in form submission
+        console.log("Sign In form submitted");
+    });
 
-                    // Get the username input value
-                    var usernameInput = form.querySelector(".login__input[type='text']");
-                    var username = usernameInput.value;
-
-                    // Set the username as a cookie
-                    setCookie("username", username, 30); // Cookie expires in 30 days
-
-                    // You can redirect or perform any other action here
-                    console.log("Username cookie set:", document.cookie);
-                });
-            }
-
-            // Initialize form submission handling for the sign in form
-            handleFormSubmission("login-in");
-
-            // Add event listener to the Sign In button
-            var signInButton = document.querySelector("#login-in .login__button");
-            signInButton.addEventListener("click", function (event) {
-                // Call the form submission handler function
-                handleFormSubmission("login-in");
-            });
-        });
+    // Add event listener for sign-up form submission
+    signUpForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        // You can add your custom logic here for sign-up form submission
+        console.log("Sign Up form submitted");
+    });
+});
 
     </script>
+
 
     <!--===== MAIN JS =====-->
     <script src="static/assets/js/main.js"></script>

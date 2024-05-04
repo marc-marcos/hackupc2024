@@ -11,7 +11,6 @@ def hello_world():
 
 @app.route("/your_flights")
 def your_flights():
-    print("test")
     return app.send_static_file("YourFlights/yourflights.html")
 
 @app.route("/registrar_no_vidente")

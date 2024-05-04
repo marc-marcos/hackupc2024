@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('')
+    fetch('http://127.0.0.1:5001/lista_vuelos')
         .then(response => response.json())
         .then(data => {
             const vuelos = data.vuelos;
@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const divVuelo = document.createElement('div');
                 divVuelo.className = 'flight';
                 divVuelo.innerHTML = `
-                    <span class="flight-number">${vuelo.numero}</span>
-                    <span class="flight-origin">${vuelo.origen}</span>
-                    <span class="flight-destination">${vuelo.destino}</span>
-                    <span class="flight-date">${vuelo.fecha}</span>
-                    <span class="flight-terminal">${vuelo.terminal}</span>
+                    <span class="flight-number">${vuelo[0]}</span>
+                    <span class="flight-origin">${vuelo[1]}</span>
+                    <span class="flight-destination">${vuelo[2]}</span>
+                    <span class="flight-date">${vuelo[3]}</span>
+                    <span class="flight-time">${vuelo[4]}</span>
                 `;
                 listaVuelos.appendChild(divVuelo);
             });

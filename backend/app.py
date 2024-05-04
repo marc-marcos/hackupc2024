@@ -194,6 +194,18 @@ def ofrecer_ayuda():
 
     return jsonify({"message": f"Ayuda ofrecida de {email_vidente} a {email_no_vidente} en el vuelo {codigo}"})
 
+@app.route("/lista_vuelos", methods=["GET"])
+def lista_vuelos():
+    conn = sqlite3.connect("database.db")
+
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM vuelos")
+
+    vuelos = cursor.fetchall()
+
+    return jsonify({"vuelos" : vuelos})
+
 
 
 @app.route("/")

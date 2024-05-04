@@ -1,0 +1,19 @@
+<!-- templates/upload.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>OCR Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Subir imagen para reconocimiento OCR</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" required>
+            <button type="submit">Procesar</button>
+        </form>
+        <h2>Resultado:</h2>
+    </div>
+</body>
+</html>

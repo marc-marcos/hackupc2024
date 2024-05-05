@@ -7,17 +7,23 @@ document.addEventListener('DOMContentLoaded', function () {
             vuelos.forEach(vuelo => {
                 const trVuelo = document.createElement('tr');
                 trVuelo.className = 'flight';
+
+                const fechaVuelo = new Date(vuelo.fecha + 'T' + vuelo.hora); // Asegúrate de que la fecha y la hora estén en formato reconocible
+                const ahora = new Date();
+                const diff = fechaVuelo - ahora;
+                const horasRestantes = diff / (1000 * 60 * 60); // Convertir de milisegundos a horas
+
                 trVuelo.innerHTML = `
                     <td>${vuelo[0]}</td>
                     <td>${vuelo[1]}</td>
                     <td>${vuelo[2]}</td>
-                    <td>${vuelo[3]}</td>
+                    <td>${vuelo[3].toLocaleString()}</td>
                     <td>${vuelo[4]}</td>
                     <td>
-                        <button class="button-checkin" ${new Date(vuelo.fecha) > new Date() ? 'disabled' : ''} onclick="location.href='/check_in';">Check in</button>
+                        <button class="button-checkin" ${horasRestantes > 0 && horasRestantes <= 48 ? '' : 'disabled'} onclick="location.href='/check_in';">Check in</button>
                     </td>
                     <td>
-                        <button class="button-draw" ${new Date(vuelo.fecha) <= new Date() ? '' : 'disabled'} onclick="location.href='/roulete';">Claim your Draw</button>
+                        <button class="button-draw" ${fechaVuelo < ahora ? '' : 'disabled'} onclick="location.href='/roulete';">Claim your Draw</button>
                     </td>
                 `;
                 listaVuelos.appendChild(trVuelo);
@@ -25,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error loading the flight data:', error));
 });
+
 
 
 

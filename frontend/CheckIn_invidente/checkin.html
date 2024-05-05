@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <title>Complete your check-in</title>
-    <link rel="stylesheet" href="/static/CheckIn/checkin.css">
-    <script src="static/CheckIn/checkin.js"></script>
+    <link rel="stylesheet" href="checkin.css">
+    <script src="checkin.js"></script>
 </head>
 <body>
     <div class="container">
@@ -17,29 +17,22 @@
             <label for="seat">Seat:</label>
             <span id="seat_letter"></span>
         </div>
-        <button id="download">Download boarding pass</button>
-        <h2>Who would you like to help?</h2>
-        <table>
+        <button id="download">Download your plane ticket</button>
+        <span id="tabtitle">Guider's information</span>
+        <table id="widget" style="border-radius: 10px;">
             <tr>
-<<<<<<<< HEAD:frontend/static/CheckIn/checkin.html
-========
-                <th>¿A quién quieres ayudar?</th>
+                <td><label for="guide_name">Guider's name:</label></td>
+                <td><label for="guide_name">Emanuel Salvador</label></td>
             </tr>
             <tr>
->>>>>>>> origin/frontend_vuelo_comprado:frontend/CheckIn_voluntario/checkin.html
-                <td>Octavio Palacios</td>
-                <td style="text-align: center;"><input type="checkbox" id="help1" name="help1"></td>
+                <td><label for="meet_place">Meeting point:</label></td>
+                <td><label for="meet_place">T1 metro station</label></td>
             </tr>
-            <tr>
-                <td>Melchor Mur</td>
-                <td style="text-align: center;"><input type="checkbox" id="help2" name="help2"></td>
-            </tr>
-            <tr>
-                <td>Ray Charles</td>
-                <td style="text-align: center;"><input type="checkbox" id="help3" name="help3"></td>
+            <tr></tr>
+                <td style="border-bottom: none;"><label for="meet_time">Meeting Time:</label></td>
+                <td style="border-bottom: none;"><label for="meet_time">10:00</label></td>
             </tr>
         </table>
-        <button type="submit" onclick="location.href='/'">Submit</button>
     </div>
     <script>
         window.onload = function() {

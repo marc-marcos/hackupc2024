@@ -54,7 +54,6 @@ label[for="seat"] {
 button:hover {
     background-color: #ffdd33; /* Un tono de amarillo más oscuro para el efecto hover */
 }
-
 th, td {
     padding: 15px;
     text-align: left;

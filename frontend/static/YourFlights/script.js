@@ -58,10 +58,10 @@ document.addEventListener("DOMContentLoaded", function () {
             checkinButton.disabled = true;
         }
 
-        if (flightDate < now) { // El vuelo ya pasó
-            drawButton.disabled = false;
+        if (flightDate.getTime() < now.getTime()) { // El vuelo ya pasó
+            drawButton.removeAttribute("disabled");
         } else {
-            drawButton.disabled = true;
+            drawButton.disabled = "";
         }
     });
 });

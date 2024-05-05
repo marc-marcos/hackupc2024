@@ -1,28 +1,31 @@
 document.addEventListener('DOMContentLoaded', function () {
     fetch('http://barrierfreeboarding.co:5001/lista_vuelos')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
             const vuelos = data.vuelos;
-            const listaVuelos = document.querySelector('.flight-list');
+            const listaVuelos = document.querySelector('.main-content table tbody');
             vuelos.forEach(vuelo => {
                 const trVuelo = document.createElement('tr');
+                trVuelo.className = 'flight';
                 trVuelo.innerHTML = `
-                    <td>${vuelo.codigo}</td>
-                    <td>${vuelo.origen}</td>
-                    <td>${vuelo.destino}</td>
-                    <td>${vuelo.fecha}</td>
-                    <td>${vuelo.terminal}</td>
+                    <td>${vuelo[0]}</td>
+                    <td>${vuelo[1]}</td>
+                    <td>${vuelo[2]}</td>
+                    <td>${vuelo[3]}</td>
+                    <td>${vuelo[4]}</td>
+                    <td>
+                        <button class="button-checkin" ${new Date(vuelo.fecha) > new Date() ? 'disabled' : ''} onclick="location.href='/check_in';">Check in</button>
+                    </td>
+                    <td>
+                        <button class="button-draw" ${new Date(vuelo.fecha) <= new Date() ? '' : 'disabled'} onclick="location.href='/roulete';">Claim your Draw</button>
+                    </td>
                 `;
                 listaVuelos.appendChild(trVuelo);
             });
         })
         .catch(error => console.error('Error loading the flight data:', error));
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -45,48 +45,49 @@
 
         <div class="main-content">
             <h1>Your Pending Flights</h1>
-                <table>
+            <table>
+                <thead>
                     <tr>
                         <th>Flight Number</th>
                         <th>Origin Airport</th>
                         <th>Destiny Airport</th>
                         <th>Departure date and time</th>
                         <th>Terminal Number</th>
+                        <th>Check-In</th>
+                        <th>Draw</th>
                     </tr>
-                    <div class="flight">
-                        <tr>
-                            <td>VY12345</td>
-                            <td>MAD</td>
-                            <td>BCN</td>
-                            <td>10/5/2024 10:00</td>
-                            <td>T1</td>
-                            <td>
-                                <button class="button-checkin" disabled onclick="location.href='/check_in';">Check in</button>
-                            </td>
-                            <td>
-                                <button class="button-draw" disabled >Claim your Draw</button>
-                            </td>
-                        </tr>         
-                    </div>
-                    <div class="flight">
-                        <tr>
-                            <td>VY12345</td>
-                            <td>MAD</td>
-                            <td>BCN</td>
-                            <td>3/5/2024 10:00</td>
-                            <td>T1</td>
-                            <td>
-                                <button class="button-checkin" disabled onclick="location.href='/check_in';">Check in</button>
-                            </td>
-                            <td>
-                                <button class="button-draw" disabled onclick="location.href='/roulete';">Claim your Draw</button>
-                            </td>
-                        </tr>         
-                    </div>
-                    </table>
-                    
-                </div>
-            </div>
+                </thead>
+                <tbody>
+                    <tr class="flight">
+                        <td>VY12345</td>
+                        <td>MAD</td>
+                        <td>BCN</td>
+                        <td>10/5/2024 10:00</td>
+                        <td>T1</td>
+                        <td>
+                            <button class="button-checkin" disabled onclick="location.href='/check_in';">Check in</button>
+                        </td>
+                        <td>
+                            <button class="button-draw" disabled>Claim your Draw</button>
+                        </td>
+                    </tr>
+                    <tr class="flight">
+                        <td>VY12345</td>
+                        <td>MAD</td>
+                        <td>BCN</td>
+                        <td>3/5/2024 10:00</td>
+                        <td>T1</td>
+                        <td>
+                            <button class="button-checkin" disabled onclick="location.href='/check_in';">Check in</button>
+                        </td>
+                        <td>
+                            <button class="button-draw" disabled onclick="location.href='/roulete';">Claim your Draw</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
     <script src="static/YourFlights/script.js"></script>
         
 </body>

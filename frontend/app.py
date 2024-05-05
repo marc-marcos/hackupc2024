@@ -19,7 +19,7 @@ def registrar_no_vidente():
 
 @app.route("/comprando_vuelo")
 def comprando_vuelo():
-    return app.send_static_file("ComprandoVuelo/comprandovuelo.h tml")
+    return app.send_static_file("ComprandoVuelo/comprandovuelo.html")
 
 @app.route("/vuelo_comprado")
 def vuelo_comprado():
@@ -36,3 +36,10 @@ def index():
 def roulete():
     return app.send_static_file("widget-ruleta/index.html")
 
+@app.route("/checkin_voluntario")
+def checkin_voluntario():
+    return app.send_static_file('CheckIn/checkin.html')
+
+@app.route("/checkin_invidente")
+def checkin_invidente():
+    return app.send_static_file('CheckIn_invidente/checkin.html')

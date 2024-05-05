@@ -75,13 +75,13 @@ document.getElementById('checkInButton').addEventListener('click', function() {
         throw new Error('Request failed.');
     })
     .then(function(data) {
-        if(data.message === 'Voluntario') {
+        if(true) {
             //llamamos a CheckIn_voluntario
-            window.location.href = '../CheckIn_voluntario/checkin.html';
+            window.location.href = '/checkin_voluntario';
         }
         else {
             //llamamos a CheckIn_invident
-            window.location.href = '../CheckIn_invidente/checkin.html';
+            window.location.href = '/checkin_invidente';
 
         }        
     })

@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 
 /*===== VARIABLES CSS =====*/
-:root{
+:root {
   /*===== Colores =====*/
-  --first-color: #9D4BFF;
-  --first-color-dark: #23004D;
+  --first-color: #ffcc00;
+  --first-color-dark: #000;
   --first-color-light: #A49EAC;
-  --first-color-lighten: #F2F2F2;
+  --first-color-lighten: #ffcc00;
 
   /*===== Font and typography =====*/
   --body-font: 'Open Sans', sans-serif;
@@ -16,19 +16,21 @@
   --small-font-size: .813rem;
 }
 
-@media screen and (min-width: 768px){
-  :root{
+@media screen and (min-width: 768px) {
+  :root {
     --normal-font-size: 1rem;
     --small-font-size: .875rem;
   }
 }
 
 /*===== BASE =====*/
-*,::before,::after{
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   font-family: var(--body-font);
@@ -36,22 +38,22 @@ body{
   color: var(--first-color-dark);
 }
 
-h1{
+h1 {
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
 /*===== LOGIN =====*/
-.login{
+.login {
   display: grid;
   grid-template-columns: 100%;
   height: 100vh;
@@ -59,29 +61,34 @@ img{
   margin-right: 1.5rem;
 }
 
-.login__content{
+.login__content {
   display: grid;
 }
 
 .login__img {
-	display: flex;
-	justify-content: left;
-	align-items: center;
-	width: auto;  /* Ajusta esto según las dimensiones de tu diseño */
-	height: auto; /* Esto mantendrá las proporciones del logo */
-  }
-  
-  .login__img img {
-	width: 100%;  /* Se ajustará al tamaño de su contenedor */
-	height: auto; /* Mantener las proporciones del logo */
-  }
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: auto;
+  /* Ajusta esto según las dimensiones de tu diseño */
+  height: auto;
+  /* Esto mantendrá las proporciones del logo */
+}
 
-.login__forms{
+.login__img img {
+  width: 100%;
+  /* Se ajustará al tamaño de su contenedor */
+  height: auto;
+  /* Mantener las proporciones del logo */
+}
+
+.login__forms {
   position: relative;
   height: 368px;
 }
 
-.login__registre, .login__create{
+.login__registre,
+.login__create {
   position: absolute;
   bottom: 1rem;
   width: 100%;
@@ -89,29 +96,31 @@ img{
   padding: 2rem 1rem;
   border-radius: 1rem;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(35,0,77,.2);
+  box-shadow: 0 8px 20px rgba(35, 0, 77, .2);
   animation-duration: .4s;
   animation-name: animate-login;
 }
 
-@keyframes animate-login{
-  0%{
-    transform: scale(1,1);
+@keyframes animate-login {
+  0% {
+    transform: scale(1, 1);
   }
-  50%{
-    transform: scale(1.1,1.1);
+
+  50% {
+    transform: scale(1.1, 1.1);
   }
-  100%{
-    transform: scale(1,1);
+
+  100% {
+    transform: scale(1, 1);
   }
 }
 
-.login__title{
+.login__title {
   font-size: var(--h1-font-size);
   margin-bottom: 2rem;
 }
 
-.login__box{
+.login__box {
   display: grid;
   grid-template-columns: max-content 1fr;
   column-gap: .5rem;
@@ -121,12 +130,12 @@ img{
   border-radius: .5rem;
 }
 
-.login__icon{
+.login__icon {
   font-size: 1.5rem;
   color: var(--first-color);
 }
 
-.login__input{
+.login__input {
   border: none;
   outline: none;
   font-size: var(--normal-font-size);
@@ -134,13 +143,13 @@ img{
   color: var(--first-color-dark);
 }
 
-.login__input::placeholder{
+.login__input::placeholder {
   font-size: var(--normal-font-size);
   font-family: var(--body-font);
   color: var(--first-color-light);
 }
 
-.login__forgot{
+.login__forgot {
   display: block;
   width: max-content;
   margin-left: auto;
@@ -150,7 +159,7 @@ img{
   color: var(--first-color-light);
 }
 
-.login__button{
+.login__button {
   display: block;
   padding: 1rem;
   margin: 2rem 0;
@@ -158,70 +167,76 @@ img{
   color: #FFF;
   font-weight: 600;
   text-align: center;
-  border-radius: .5rem;
+  border-radius: 10px;
+  border: white;
+  /*  */
   transition: .3s;
 }
 
-.login__button:hover{
+.login__button:hover {
   background-color: var(--first-color-dark);
 }
 
-.login__account, .login__signin, .login__signup{
+.login__account,
+.login__signin,
+.login__signup {
   font-weight: 600;
   font-size: var(--small-font-size);
 }
 
-.login__account{
+.login__account {
   color: var(--first-color-dark);
 }
 
-.login__signin, .login__signup{
+.login__signin,
+.login__signup {
   color: var(--first-color);
   cursor: pointer;
 }
 
-.login__social{
+.login__social {
   margin-top: 2rem;
 }
 
-.login__social-icon{
+.login__social-icon {
   font-size: 1.5rem;
   color: var(--first-color-dark);
   margin: 0 1.5rem;
 }
 
 /*Show login*/
-.block{
+.block {
   display: block;
 }
 
 /*Hidden login*/
-.none{
+.none {
   display: none;
 }
 
 /* ===== MEDIA QUERIES =====*/
-@media screen and (min-width: 1024px){
-	.login__forms {
-	  width: 348px; /* Ajusta esta medida si es necesario */
-	  justify-self: center;
-	}
+@media screen and (min-width: 1024px) {
+  .login__forms {
+    width: 348px;
+    /* Ajusta esta medida si es necesario */
+    justify-self: center;
+  }
 }
 
-@media screen and (min-width: 1024px){
-  .login{
+@media screen and (min-width: 1024px) {
+  .login {
     height: 100vh;
     overflow: hidden;
   }
 
-  .login__content{
+  .login__content {
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
     align-items: center;
     margin-left: 10rem;
   }
 
-  .login__img{
+  .login__img {
     display: flex;
     width: 600px;
     height: 588px;
@@ -230,20 +245,21 @@ img{
     padding-left: 1rem;
   }
 
-  .login__img img{
+  .login__img img {
     width: 390px;
     margin-top: 0;
   }
 
-  .login__registre, .login__create{
+  .login__registre,
+  .login__create {
     left: -11rem;
   }
 
-  .login__registre{
+  .login__registre {
     bottom: -2rem;
   }
 
-  .login__create{
+  .login__create {
     bottom: -5.5rem;
   }
 }
